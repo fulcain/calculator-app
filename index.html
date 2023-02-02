@@ -15,7 +15,7 @@
     <title>Calculator</title>
 </head>
 
-<body>\
+<body>
     
     <!-- container -->
     <div class="container">
@@ -25,22 +25,13 @@
             <h2>Calculator</h2>
             <div class="button-box">
 
-                <!-- left column -->
-                <div id="left-column">
-                    <div class="math-operators">%</div>
-                    <div class="math-operators">+</div>
-                    <div class="math-operators">-</div>
-                    <div class="math-operators">x</div>
-                    <div class="math-operators">÷</div>
-                </div>
-
                 <!-- right column -->
-                <div id="right-column">
-                    <div class="math-operators">log</div>
-                    <div class="math-operators">Rad</div>
-                    <div class="math-operators">!</div>
-                    <div class="math-operators">Sin</div>
-                    <div class="math-operators">Root</div>
+                <div id="operators-box">
+                    <div class="math-operators buttons">log</div>
+                    <div class="math-operators buttons">Rad</div>
+                    <div class="math-operators buttons">!</div>
+                    <div class="math-operators buttons">Sin</div>
+                    <div class="math-operators buttons">Root</div>
                 </div>
             </div>
         </div>
@@ -51,27 +42,36 @@
             <div id="calculator">
                 <div id="answer-page">
                     <!-- input -->
-                    <input type="text" readonly >
+                    <input type="text" readonly>
                 </div>
-                <div class="numbers">
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
+                <div class="rows">
+                    <span id="delete-all" class="buttons">AC</span>
+                    <span id="delete-one" class="buttons">DEL</span>
+                    <span class="math-operators buttons">%</span>
+                    <span class="math-operators buttons">÷</span>
                 </div>
-                <div class="numbers">
-                    <span>4</span>
-                    <span>5</span>
-                    <span>6</span>
+                <div class="rows">
+                    <span class="numbers buttons">7</span>
+                    <span class="numbers buttons">8</span>
+                    <span class="numbers buttons">9</span>
+                    <span class="math-operators buttons">X</span>
                 </div>
-                <div class="numbers">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
+                <div class="rows">
+                    <span class="numbers buttons">4</span>
+                    <span class="numbers buttons">5</span>
+                    <span class="numbers buttons">6</span>
+                    <span class="math-operators buttons">-</span>
                 </div>
-                <div class="numbers">
-                    <span>0</span>
-                    <span>·</span>
-                    <span>=</span>
+                <div class="rows">
+                    <span class="numbers buttons">1</span>
+                    <span class="numbers buttons">2</span>
+                    <span class="numbers buttons">3</span>
+                    <span class="math-operators buttons">+</span>
+                </div>
+                <div class="rows">
+                    <span class="numbers buttons" id="more-width-number">0</span>
+                    <span class="buttons">·</span>
+                    <span class="buttons">=</span>
                 </div>
             </div>
         </div>

@@ -1,11 +1,43 @@
 /* font family */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&family=Poppins:wght@300&display=swap');
 
+*{
+    font-family: poppins;
+}
 .container {
-    margin: 50px auto;
     width: 800px;
-    height: 600px;
+    margin: 0 auto;
+    min-height: 98vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* all buttons */
+.buttons {
+    cursor: pointer;
+    background-color: #161e29;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    transition: all 0.2s;
+    /* user cant select the text */
+    user-select: none;
+}
+
+.buttons:hover {
+    background-color: #818dff;
+}
+
+.buttons:active {
+    background-color: #afb6f3;
 }
 
 /* left div START*/
@@ -25,46 +57,10 @@
     font-size: 23px;
     font-weight: 400;
     margin: 40px auto;
-    font-family: poppins;
 }
 
 .button-box {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-#left-column>div {
-    margin-right: 30px;
-}
-
-#left-column>div,
-#right-column>div {
-    cursor: pointer;
-    background-color: #161e29;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 2px;
-    font-family: poppins;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 70px;
-    transition: all 0.2s;
-
-    /* user cant select the text */
-    user-select: none;
-}
-
-#right-column>div:hover,
-#left-column>div:hover {
-    background-color: #818dff;
-}
-
-#right-column>div:active,
-#left-column>div:active {
-    background-color: #afb6f3;
+    margin-top: 25px;
 }
 
 /* left div END*/
@@ -78,59 +74,51 @@
     position: relative;
 }
 
+/* calculator */
 #calculator {
     position: absolute;
     top: 40px;
     left: 145px;
     color: #fff;
-    font-family: poppins;
 }
 
+/* answer page */
 #answer-page input {
     outline: none;
     border: none;
     background-color: #1d283a;
     height: 70px;
-    font-family: poppins;
     font-size: 40px;
     font-weight: 600;
     color: #fff;
-    text-align: right;
+    text-align: left;
     width: 260px;
-    margin-bottom: 5px;
+    margin-block: 10px;
     letter-spacing: 2px;
 }
 
-.numbers {
+/* numbers */
+.rows {
     display: flex;
-    margin-bottom: 20px;
     margin-right: 20px;
 }
 
-.numbers>span {
-    background-color: #0f1722;
-    width:80px;
-    height: 80px;
+.rows>span {
     margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-size: 30px;
     font-weight: 600;
-    border-radius: 2px;
-
-    /* user cant select the text */
-    user-select: none;
 }
 
-.numbers>span:hover {
+.rows>span:hover {
     background-color: #818dff;
 }
 
 .numbers>span:active {
     background-color: #afb6f3;
+}
+
+/* more width number */
+#more-width-number {
+    width: 130px;
 }
 
 /* right div END */

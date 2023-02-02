@@ -1,7 +1,7 @@
 /* font family */
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&family=Poppins:wght@300&display=swap');
 
-.container{
+.container {
     margin: 50px auto;
     width: 1000px;
     height: 600px;
@@ -12,7 +12,7 @@
 
 #left-div {
     width: 240px;
-    background-color:#0f1722;
+    background-color: #0f1722;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -20,6 +20,7 @@
     color: #fff;
 }
 
+/* h2 */
 #left-div h2 {
     font-size: 23px;
     font-weight: 400;
@@ -27,27 +28,40 @@
     font-family: poppins;
 }
 
-.left-flex{
+.button-box {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
+
 #left-column>div {
     margin-right: 30px;
 }
 
 #left-column>div,
-#right-column>div{
+#right-column>div {
+    cursor: pointer;
     background-color: #161e29;
     margin-bottom: 20px;
-    padding: 18px 26px;
+    padding: 20px;
     border-radius: 2px;
     font-family: poppins;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    transition: all 0.2s;
 
-#right-column>div:hover , #left-column>div:hover {
-    transition: all 0.3s;
+    /* user cant select the text */
+    user-select: none;
+}
+#right-column>div:hover,
+#left-column>div:hover {
     background-color: #818dff;
+}
+#right-column>div:active,
+#left-column>div:active {
+    background-color: #afb6f3;
 }
 
 /* left div END*/
@@ -57,7 +71,7 @@
 #right-div {
     background-color: #1d283a;
     width: 660px;
-    height:600px;
+    height: 600px;
 }
 
 /* right div END */

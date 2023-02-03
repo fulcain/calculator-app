@@ -83,11 +83,11 @@
 }
 
 /* answer page */
-#answer-page input {
+#answer-page textarea {
     outline: none;
     border: none;
     background-color: #1d283a;
-    height: 70px;
+    height: 65px;
     font-size: 40px;
     font-weight: 600;
     color: #fff;
@@ -95,8 +95,22 @@
     width: 260px;
     margin-block: 10px;
     user-select: none;
+    resize: none;
+}
+::-webkit-scrollbar {
+    width: 10px;
+
 }
 
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #0f1722;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #0a0d11;
+    border-radius: 5px;
+}
 /* numbers */
 .rows {
     display: flex;

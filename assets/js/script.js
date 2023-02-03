@@ -50,7 +50,7 @@ equal.addEventListener('click', answerPage)
 function chooseNumber() {
     numbersEl.forEach(item => {
         item.addEventListener("click", () => {
-            changeDisplay(item)
+            changeDisplay(item.textContent)
             if (operatorCount != 0) {
                 operatorCount = 0
                 fact(inputEL.value)
@@ -67,7 +67,7 @@ function chooseOperator() {
     operatorBtn.forEach(item => {
         item.addEventListener("click", () => {
             if (operatorCount < 1) {
-                changeDisplay(item)
+                changeDisplay(item.textContent)
                 operatorCount++
             }
         })
@@ -77,7 +77,7 @@ function chooseOperator() {
 // TITLE: ChangeDisplay Function
 // har dokme ke click beshe , meqdaresh vared input mishe + harchi ke az qabl bode
 function changeDisplay(button) {
-    inputEL.value += button.textContent
+    inputEL.value += button
 }
 
 // TITLE: delete all input text ( AC )

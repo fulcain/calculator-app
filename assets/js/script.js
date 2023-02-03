@@ -33,7 +33,7 @@ let numbersEl = document.querySelectorAll('.numbers'),
 // event ha
 
 // delete all btn ( AC )
-deleteAllBtn.addEventListener("click", () =>{
+deleteAllBtn.addEventListener("click", () => {
     changeDisplay('')
 })
 
@@ -41,7 +41,7 @@ deleteAllBtn.addEventListener("click", () =>{
 deleteLastBtn.addEventListener('click', deleteLastInputValue)
 
 // equal ( = )
-equal.addEventListener('click', answerPage)
+equal.addEventListener('click', answerFunction)
 
 
 // function ha
@@ -56,7 +56,6 @@ function chooseNumber() {
             if (count != 0) {
                 count = 0
             }
-
         })
     })
     dotBtn.addEventListener('click', () => {
@@ -75,7 +74,10 @@ let count = 0
 function chooseOperator() {
     operatorBtn.forEach(item => {
         item.addEventListener("click", () => {
-            if (count < 1 && inputEL.value != '') {
+            if (count < 1 && inputEL.value != '' && item.textContent != '-') {
+                addToDisplay(item.textContent)
+                count++
+            } else if (count < 1 && item.textContent == '-') {
                 addToDisplay(item.textContent)
                 count++
             }
@@ -104,7 +106,7 @@ function deleteLastInputValue() {
 let answer = ''
 // TITLE: answer to the Eq ( = )
 // javab moadele ro to input neshon mide
-function answerPage() {
+function answerFunction() {
     if (inputEL.value === "") {
         changeDisplay('')
     } else {

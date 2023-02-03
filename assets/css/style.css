@@ -1,9 +1,10 @@
 /* font family */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&family=Poppins:wght@300&display=swap');
 
-*{
+* {
     font-family: poppins;
 }
+
 .container {
     width: 800px;
     margin: 0 auto;
@@ -98,6 +99,7 @@
     resize: none;
 
 }
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -111,6 +113,7 @@
     background-color: #919191ab;
     border-radius: 5px;
 }
+
 /* numbers */
 .rows {
     display: flex;
@@ -128,3 +131,40 @@
 }
 
 /* right div END */
+
+/* responsive */
+@media screen and (max-width:500px) {
+    .container {
+        width: 350px;
+    }
+
+    #calculator {
+        top: 40px;
+        left: 20px;
+        color: #fff;
+    }
+
+    .button-box {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .buttons {
+        width: 20px;
+        height: 20px;
+        font-size: 15px;
+    }
+
+    #answer-page textarea {
+        width: 200px;
+        height: 34px;
+        font-size: 20px;
+    }
+    #left-div h2{
+        font-size: 15px;
+    }
+    #left-div,
+    #right-div{
+        height: 450px;
+    }
+}

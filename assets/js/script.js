@@ -75,7 +75,7 @@ let count = 0
 function chooseOperator() {
     operatorBtn.forEach(item => {
         item.addEventListener("click", () => {
-            if (count < 1) {
+            if (count < 1 && inputEL.value != '') {
                 addToDisplay(item.textContent)
                 count++
             }

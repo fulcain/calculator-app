@@ -25,7 +25,10 @@ let numbersEl = document.querySelectorAll('.numbers'),
     mathFunctionsBtn = document.querySelectorAll('.math-functions'),
 
     // dot button
-    dotBtn = document.querySelector('#dot')
+    dotBtn = document.querySelector('#dot'),
+
+    //  number modifiers
+    numberModifiers = document.querySelectorAll('.number-modifiers')
 
 
 
@@ -53,16 +56,22 @@ function chooseNumber() {
     numbersEl.forEach(item => {
         item.addEventListener("click", () => {
             addToDisplay(item.textContent)
-            if (count != 0) {
-                count = 0
-            }
+            count = 0
         })
     })
-    dotBtn.addEventListener('click', () => {
-        if (inputEL.value != '' && count < 1) {
-            addToDisplay(dotBtn.textContent)
-            count++
-        }
+
+    // " ( "
+    // " )" 
+    // " . "
+    numberModifiers.forEach(item => {
+        item.addEventListener("click", () => {
+            if (item.textContent == '(' || item.textContent == ')') {
+                addToDisplay(item.textContent)
+            } else if (count < 1 && item.textContent == '.' && inputEL.value != '') {
+                addToDisplay(item.textContent)
+                count++
+            }
+        })
     })
 
 }

@@ -18,7 +18,7 @@
 .buttons {
     cursor: pointer;
     background-color: #161e29;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 20px;
     border-radius: 2px;
     display: flex;
@@ -108,7 +108,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #0a0d11;
+    background-color: #919191ab;
     border-radius: 5px;
 }
 /* numbers */
@@ -124,7 +124,7 @@
 
 /* more width number */
 #more-width-number {
-    width: 130px;
+    width: 100%;
 }
 
 /* right div END */

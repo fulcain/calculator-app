@@ -19,7 +19,10 @@ let numbersEl = document.querySelectorAll('.numbers'),
     equal = document.querySelector('.equal'),
 
     // factorial
-    factorial = document.querySelector('.factorial')
+    factorial = document.querySelector('.factorial'),
+
+    // math functions
+    mathFunctionsBtn = document.querySelectorAll('.math-functions')
 
 
 
@@ -30,10 +33,10 @@ let numbersEl = document.querySelectorAll('.numbers'),
 deleteAllBtn.addEventListener("click", deleteAllInputValues)
 
 // delete last btn ( DEL )
-deleteLastBtn.addEventListener('click' , deleteLastInputValue )
+deleteLastBtn.addEventListener('click', deleteLastInputValue)
 
 // equal ( = )
-equal.addEventListener('click',answerPage)
+equal.addEventListener('click', answerPage)
 
 // factorial ( ! )
 factorial.addEventListener('click', fact)
@@ -48,8 +51,9 @@ function chooseNumber() {
     numbersEl.forEach(item => {
         item.addEventListener("click", () => {
             changeDisplay(item)
-            if(operatorCount != 0){
+            if (operatorCount != 0) {
                 operatorCount = 0
+                fact(inputEL.value)
             }
         })
     })
@@ -62,7 +66,7 @@ let operatorCount = 0
 function chooseOperator() {
     operatorBtn.forEach(item => {
         item.addEventListener("click", () => {
-            if(operatorCount < 1){
+            if (operatorCount < 1) {
                 changeDisplay(item)
                 operatorCount++
             }
@@ -84,28 +88,49 @@ function deleteAllInputValues() {
 
 // TITLE: delete last input text ( DEL )
 // akharin addad ya alamat ke to input hast ro pak mikone
-function deleteLastInputValue(){
-    inputEL.value = inputEL.value.slice(0,-1)
+function deleteLastInputValue() {
+    inputEL.value = inputEL.value.slice(0, -1)
 }
-
+let answer = ''
 // TITLE: answer to the Eq ( = )
 // javab moadele ro to input neshon mide
-function answerPage (){
-    if ( inputEL.value === '' ){
+function answerPage() {
+    if (inputEL.value === '') {
         inputEL.value = ''
-    }else {
-        let answer = eval(inputEL.value)
+    } else {
+        answer = eval(inputEL.value)
         inputEL.value = answer
     }
 }
 
+// TITLE math functions:
+function mathFunctions() {
+
+    mathFunctionsBtn.forEach(item => {
+        item.addEventListener('click', () => {
+            if (item.textContent == "log") {
+                console.log("Log");
+            } else if (item.textContent == 'Rad') {
+                console.log("radian");
+            } else if (item.textContent == '!') {
+                fact(inputEL.value)
+            } else if (item.textContent == "Sin") {
+                console.log("sin");
+            } else if (item.textContent == "Root") {
+                console.log("root");
+            }
+        })
+    })
+
+}
 // TITLE: factorial ( ! )
 // factorial addad ha ro hesab mikone
 function fact(e) {
     if (e == 0) {
-        return 1
+        return  1
     } else {
         return e * fact(e - 1)
+
     }
 }
 
@@ -113,6 +138,7 @@ function fact(e) {
 document.addEventListener('DOMContentLoaded', () => {
     chooseNumber()
     chooseOperator()
+    mathFunctions()
 })
 
-    
+

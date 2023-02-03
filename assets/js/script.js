@@ -74,10 +74,10 @@ let count = 0
 function chooseOperator() {
     operatorBtn.forEach(item => {
         item.addEventListener("click", () => {
-            if (count < 1 && inputEL.value != '' && item.textContent != '-') {
-                addToDisplay(item.textContent)
+            if (count < 1 && inputEL.value != '' && item.getAttribute('data') != '-') {
+                addToDisplay(item.getAttribute('data'))
                 count++
-            } else if (count < 1 && item.textContent == '-') {
+            } else if (count < 1 && item.getAttribute('data') == '-') {
                 addToDisplay(item.textContent)
                 count++
             }
@@ -173,5 +173,3 @@ document.addEventListener('DOMContentLoaded', () => {
     chooseOperator()
     mathFunctions()
 })
-
-

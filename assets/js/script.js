@@ -139,11 +139,11 @@ function mathFunctions() {
                 if (inputEL.value != '') {
                     inputEL.value = Math.sin(inputEL.value)
 
-                    // Root
-                } else if (item.textContent == "Root") {
-                    if (inputEL.value != '') {
-                        inputEL.value = Math.sqrt(inputEL.value)
-                    }
+                }
+                // Root
+            } else if (item.textContent == "Root") {
+                if (inputEL.value != '') {
+                    inputEL.value = Math.sqrt(inputEL.value)
                 }
             }
         })

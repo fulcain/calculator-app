@@ -23,6 +23,9 @@ let numbersEl = document.querySelectorAll('.numbers'),
 // delete all btn
 deleteAllBtn.addEventListener("click", deleteAllInputValues)
 
+// delete last btn
+deleteLastBtn.addEventListener('click' , deleteLastInputValue )
+
 // function ha
 
 // TITLE: entekhab adad
@@ -64,6 +67,12 @@ function changeDisplay(button) {
 // value input ro khali mikone
 function deleteAllInputValues() {
     inputEL.value = ''
+}
+
+// TITLE: delete last input text
+// akharin addad ya alamat ke to input hast ro pak mikone
+function deleteLastInputValue(){
+    inputEL.value = inputEL.value.slice(0,-1)
 }
 
 // TITLE: load function ha bad az load safhe

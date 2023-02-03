@@ -22,7 +22,10 @@ let numbersEl = document.querySelectorAll('.numbers'),
     factorial = document.querySelector('.factorial'),
 
     // math functions
-    mathFunctionsBtn = document.querySelectorAll('.math-functions')
+    mathFunctionsBtn = document.querySelectorAll('.math-functions'),
+
+    // dot button
+    dotBtn = document.querySelector('#dot')
 
 
 
@@ -38,37 +41,41 @@ deleteLastBtn.addEventListener('click', deleteLastInputValue)
 // equal ( = )
 equal.addEventListener('click', answerPage)
 
-// factorial ( ! )
-// factorial.addEventListener('click', fact(inputEL.value))
-
 
 // function ha
 
 // TITLE: entekhab adad
 // adad mored nazaro entekhab mikone va ba function changeDisplay on ro be input ezafe mikone
-// agar meqdar operatorCount 0 nabod on ro sefr mikone
+// agar meqdar count 0 nabod on ro sefr mikone
 function chooseNumber() {
     numbersEl.forEach(item => {
         item.addEventListener("click", () => {
             changeDisplay(item.textContent)
-            if (operatorCount != 0) {
-                operatorCount = 0
-                fact(inputEL.value)
+            if (count != 0) {
+                count = 0
             }
+
         })
     })
+    dotBtn.addEventListener('click', () => {
+        if (inputEL.value != '' && count < 1) {
+            changeDisplay(dotBtn.textContent)
+            count++
+        }
+    })
+
 }
 
-let operatorCount = 0
+let count = 0
 // TITLE: entekhab operator
 // ba click operator ha meqdareshon ro ba estefade az function changeDisplay namayesh mide
 // be meqdar operator yek done ezafe mishe ke bishtar az 1 bar estefade nashan
 function chooseOperator() {
     operatorBtn.forEach(item => {
         item.addEventListener("click", () => {
-            if (operatorCount < 1) {
+            if (count < 1) {
                 changeDisplay(item.textContent)
-                operatorCount++
+                count++
             }
         })
     })
@@ -104,6 +111,8 @@ function answerPage() {
 }
 
 // TITLE: math functions:
+// bad az click har dokme az function hay riazi, amaliat marbot be onha anjam mishe
+// va vared input value mishe
 function mathFunctions() {
 
     mathFunctionsBtn.forEach(item => {
@@ -136,11 +145,12 @@ function mathFunctions() {
                         inputEL.value = Math.sqrt(inputEL.value)
                     }
                 }
-            } 
+            }
         })
     })
 
 }
+
 // TITLE: factorial ( ! )
 // factorial addad ha ro hesab mikone
 function fact(e) {

@@ -68,13 +68,8 @@ function deleteAllInputValues() {
 
 // TITLE: load function ha bad az load safhe
 document.addEventListener('DOMContentLoaded', () => {
-<<<<<<< HEAD
-    ChangeDisplay()
-})
-
-
-=======
     chooseNumber()
     chooseOperator()
 })
->>>>>>> deb4003573faee78f745af2ab04e27c0e89d026e
+
+    

@@ -122,14 +122,6 @@
     font-weight: 600;
 }
 
-.rows>span:hover {
-    background-color: #818dff;
-}
-
-.numbers>span:active {
-    background-color: #afb6f3;
-}
-
 /* more width number */
 #more-width-number {
     width: 130px;

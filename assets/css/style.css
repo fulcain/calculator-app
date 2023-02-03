@@ -94,7 +94,7 @@
     text-align: left;
     width: 260px;
     margin-block: 10px;
-    letter-spacing: 2px;
+    user-select: none;
 }
 
 /* numbers */

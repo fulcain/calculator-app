@@ -16,7 +16,10 @@ let numbersEl = document.querySelectorAll('.numbers'),
     operatorBtn = document.querySelectorAll('.math-operators'),
 
     // equal
-    equal = document.querySelector('.equal')
+    equal = document.querySelector('.equal'),
+
+    // factorial
+    factorial = document.querySelector('.factorial')
 
 
 
@@ -31,6 +34,9 @@ deleteLastBtn.addEventListener('click' , deleteLastInputValue )
 
 // equal ( = )
 equal.addEventListener('click',answerPage)
+
+// factorial ( ! )
+factorial.addEventListener('click', fact)
 
 
 // function ha
@@ -70,19 +76,19 @@ function changeDisplay(button) {
     inputEL.value += button.textContent
 }
 
-// TITLE: delete all input text
+// TITLE: delete all input text ( AC )
 // value input ro khali mikone
 function deleteAllInputValues() {
     inputEL.value = ''
 }
 
-// TITLE: delete last input text
+// TITLE: delete last input text ( DEL )
 // akharin addad ya alamat ke to input hast ro pak mikone
 function deleteLastInputValue(){
     inputEL.value = inputEL.value.slice(0,-1)
 }
 
-// TITLE: answer to the Eq
+// TITLE: answer to the Eq ( = )
 // javab moadele ro to input neshon mide
 function answerPage (){
     if ( inputEL.value === '' ){
@@ -93,7 +99,15 @@ function answerPage (){
     }
 }
 
-
+// TITLE: factorial ( ! )
+// factorial addad ha ro hesab mikone
+function fact(e) {
+    if (e == 0) {
+        return 1
+    } else {
+        return e * fact(e - 1)
+    }
+}
 
 // TITLE: load function ha bad az load safhe
 document.addEventListener('DOMContentLoaded', () => {

@@ -39,7 +39,7 @@ deleteLastBtn.addEventListener('click', deleteLastInputValue)
 equal.addEventListener('click', answerPage)
 
 // factorial ( ! )
-factorial.addEventListener('click', fact)
+// factorial.addEventListener('click', fact(inputEL.value))
 
 
 // function ha
@@ -113,7 +113,7 @@ function mathFunctions() {
             } else if (item.textContent == 'Rad') {
                 console.log("radian");
             } else if (item.textContent == '!') {
-                fact(inputEL.value)
+                inputEL.value = fact(inputEL.value)
             } else if (item.textContent == "Sin") {
                 console.log("sin");
             } else if (item.textContent == "Root") {
@@ -130,9 +130,9 @@ function fact(e) {
         return  1
     } else {
         return e * fact(e - 1)
-
     }
 }
+
 
 // TITLE: load function ha bad az load safhe
 document.addEventListener('DOMContentLoaded', () => {

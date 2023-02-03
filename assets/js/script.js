@@ -10,7 +10,10 @@ let numbersEl = document.querySelectorAll('.numbers'),
     deleteAllBtn = document.querySelector('#delete-all'),
 
     // delete last btn
-    deleteLastBtn = document.querySelector('#delete-last')
+    deleteLastBtn = document.querySelector('#delete-last'),
+
+    // operator
+    operatorBtn = document.querySelectorAll('.math-operators')
 
 
 
@@ -23,13 +26,32 @@ deleteAllBtn.addEventListener("click", deleteAllInputValues)
 // function ha
 
 // TITLE: entekhab adad
-// adad mored nazaro entekhab mikone va ba function ChangeDisplay on ro be input ezafe mikone
+// adad mored nazaro entekhab mikone va ba function changeDisplay on ro be input ezafe mikone
+// agar meqdar operatorCount 0 nabod on ro sefr mikone
 function chooseNumber() {
-    for (let i = 0; i < numbersEl.length; i++) {
-        numbersEl[i].addEventListener("click", () => {
-            changeDisplay(numbersEl[i])
+    numbersEl.forEach(item => {
+        item.addEventListener("click", () => {
+            changeDisplay(item)
+            if(operatorCount != 0){
+                operatorCount = 0
+            }
         })
-    }
+    })
+}
+
+let operatorCount = 0
+// TITLE: entekhab operator
+// ba click operator ha meqdareshon ro ba estefade az function changeDisplay namayesh mide
+// be meqdar operator yek done ezafe mishe ke bishtar az 1 bar estefade nashan
+function chooseOperator() {
+    operatorBtn.forEach(item => {
+        item.addEventListener("click", () => {
+            if(operatorCount < 1){
+                changeDisplay(item)
+                operatorCount++
+            }
+        })
+    })
 }
 
 // TITLE: ChangeDisplay Function
@@ -47,4 +69,5 @@ function deleteAllInputValues() {
 // TITLE: load function ha bad az load safhe
 document.addEventListener('DOMContentLoaded', () => {
     chooseNumber()
+    chooseOperator()
 })

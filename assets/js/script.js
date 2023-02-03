@@ -103,22 +103,40 @@ function answerPage() {
     }
 }
 
-// TITLE math functions:
+// TITLE: math functions:
 function mathFunctions() {
 
     mathFunctionsBtn.forEach(item => {
         item.addEventListener('click', () => {
+            // logarithm
             if (item.textContent == "log") {
-                console.log("Log");
+                if (inputEL.value != '') {
+                    inputEL.value = Math.log2(inputEL.value)
+                }
+                // Radian
             } else if (item.textContent == 'Rad') {
-                console.log("radian");
+                if (inputEL.value != '') {
+                    inputEL.value = inputEL.value * Math.PI / 180
+                }
+
+                // Factorial
             } else if (item.textContent == '!') {
-                inputEL.value = fact(inputEL.value)
+                if (inputEL.value != '') {
+                    inputEL.value = fact(inputEL.value)
+                }
+
+                // Sin
             } else if (item.textContent == "Sin") {
-                console.log("sin");
-            } else if (item.textContent == "Root") {
-                console.log("root");
-            }
+                if (inputEL.value != '') {
+                    inputEL.value = Math.sin(inputEL.value)
+
+                    // Root
+                } else if (item.textContent == "Root") {
+                    if (inputEL.value != '') {
+                        inputEL.value = Math.sqrt(inputEL.value)
+                    }
+                }
+            } 
         })
     })
 
@@ -127,7 +145,7 @@ function mathFunctions() {
 // factorial addad ha ro hesab mikone
 function fact(e) {
     if (e == 0) {
-        return  1
+        return 1
     } else {
         return e * fact(e - 1)
     }

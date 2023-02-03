@@ -13,18 +13,25 @@ let numbersEl = document.querySelectorAll('.numbers'),
     deleteLastBtn = document.querySelector('#delete-last'),
 
     // operator
-    operatorBtn = document.querySelectorAll('.math-operators')
+    operatorBtn = document.querySelectorAll('.math-operators'),
+
+    // equal
+    equal = document.querySelector('.equal')
 
 
 
 
 // event ha
 
-// delete all btn
+// delete all btn ( AC )
 deleteAllBtn.addEventListener("click", deleteAllInputValues)
 
-// delete last btn
+// delete last btn ( DEL )
 deleteLastBtn.addEventListener('click' , deleteLastInputValue )
+
+// equal ( = )
+equal.addEventListener('click',answerPage)
+
 
 // function ha
 
@@ -74,6 +81,19 @@ function deleteAllInputValues() {
 function deleteLastInputValue(){
     inputEL.value = inputEL.value.slice(0,-1)
 }
+
+// TITLE: answer to the Eq
+// javab moadele ro to input neshon mide
+function answerPage (){
+    if ( inputEL.value === '' ){
+        inputEL.value = ''
+    }else {
+        let answer = eval(inputEL.value)
+        inputEL.value = answer
+    }
+}
+
+
 
 // TITLE: load function ha bad az load safhe
 document.addEventListener('DOMContentLoaded', () => {

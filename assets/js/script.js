@@ -33,7 +33,9 @@ let numbersEl = document.querySelectorAll('.numbers'),
 // event ha
 
 // delete all btn ( AC )
-deleteAllBtn.addEventListener("click", deleteAllInputValues)
+deleteAllBtn.addEventListener("click", () =>{
+    changeDisplay('')
+})
 
 // delete last btn ( DEL )
 deleteLastBtn.addEventListener('click', deleteLastInputValue)
@@ -45,12 +47,12 @@ equal.addEventListener('click', answerPage)
 // function ha
 
 // TITLE: entekhab adad
-// adad mored nazaro entekhab mikone va ba function changeDisplay on ro be input ezafe mikone
+// adad mored nazaro entekhab mikone va ba function addToDisplay on ro be input ezafe mikone
 // agar meqdar count 0 nabod on ro sefr mikone
 function chooseNumber() {
     numbersEl.forEach(item => {
         item.addEventListener("click", () => {
-            changeDisplay(item.textContent)
+            addToDisplay(item.textContent)
             if (count != 0) {
                 count = 0
             }
@@ -59,7 +61,7 @@ function chooseNumber() {
     })
     dotBtn.addEventListener('click', () => {
         if (inputEL.value != '' && count < 1) {
-            changeDisplay(dotBtn.textContent)
+            addToDisplay(dotBtn.textContent)
             count++
         }
     })
@@ -68,45 +70,46 @@ function chooseNumber() {
 
 let count = 0
 // TITLE: entekhab operator
-// ba click operator ha meqdareshon ro ba estefade az function changeDisplay namayesh mide
+// ba click operator ha meqdareshon ro ba estefade az function addToDisplay namayesh mide
 // be meqdar operator yek done ezafe mishe ke bishtar az 1 bar estefade nashan
 function chooseOperator() {
     operatorBtn.forEach(item => {
         item.addEventListener("click", () => {
             if (count < 1) {
-                changeDisplay(item.textContent)
+                addToDisplay(item.textContent)
                 count++
             }
         })
     })
 }
 
-// TITLE: ChangeDisplay Function
+// TITLE: addToDisplay Function
 // har dokme ke click beshe , meqdaresh vared input mishe + harchi ke az qabl bode
-function changeDisplay(button) {
+function addToDisplay(button) {
     inputEL.value += button
 }
 
-// TITLE: delete all input text ( AC )
-// value input ro khali mikone
-function deleteAllInputValues() {
-    inputEL.value = ''
+// TITLE: changeDisplay
+// meqdar display = argument qarare migire
+function changeDisplay(name) {
+    inputEL.value = name
 }
+
 
 // TITLE: delete last input text ( DEL )
 // akharin addad ya alamat ke to input hast ro pak mikone
 function deleteLastInputValue() {
-    inputEL.value = inputEL.value.slice(0, -1)
+    changeDisplay(inputEL.value.slice(0, -1))
 }
 let answer = ''
 // TITLE: answer to the Eq ( = )
 // javab moadele ro to input neshon mide
 function answerPage() {
-    if (inputEL.value === '') {
-        inputEL.value = ''
+    if (inputEL.value === "") {
+        changeDisplay('')
     } else {
         answer = eval(inputEL.value)
-        inputEL.value = answer
+        changeDisplay(answer)
     }
 }
 
@@ -120,30 +123,30 @@ function mathFunctions() {
             // logarithm
             if (item.textContent == "log") {
                 if (inputEL.value != '') {
-                    inputEL.value = Math.log2(inputEL.value)
+                    changeDisplay(Math.log2(inputEL.value))
                 }
                 // Radian
             } else if (item.textContent == 'Rad') {
                 if (inputEL.value != '') {
-                    inputEL.value = inputEL.value * Math.PI / 180
+                    changeDisplay(inputEL.value * Math.PI / 180)
                 }
 
                 // Factorial
             } else if (item.textContent == '!') {
                 if (inputEL.value != '') {
-                    inputEL.value = fact(inputEL.value)
+                    changeDisplay(fact(inputEL.value))
                 }
 
                 // Sin
             } else if (item.textContent == "Sin") {
                 if (inputEL.value != '') {
-                    inputEL.value = Math.sin(inputEL.value)
+                    changeDisplay(Math.sin(inputEL.value))
 
                 }
                 // Root
             } else if (item.textContent == "Root") {
                 if (inputEL.value != '') {
-                    inputEL.value = Math.sqrt(inputEL.value)
+                    changeDisplay(Math.sqrt(inputEL.value))
                 }
             }
         })

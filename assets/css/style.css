@@ -22,6 +22,7 @@
 }
 body{
     background: var(--color-6);
+    transition: 1s all;
 }
 .container {
     width: 800px;
@@ -34,7 +35,6 @@ body{
 
 /* theme icon */
 #theme-btn i{
-    transition: .3s all;
     cursor: pointer;
 }
 

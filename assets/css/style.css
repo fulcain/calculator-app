@@ -80,15 +80,18 @@ body{
     font-size: 23px;
     font-weight: 400;
     margin: 40px auto;
-
     display: flex;
     gap: 10px;
 }
 
 .button-box {
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
+#operators-box {
+    display: flex;
+    gap: 20px;
+}
 /* left div END*/
 
 /* right div START */
@@ -113,8 +116,8 @@ body{
     outline: none;
     border: none;
     background-color: var(--color-5);
-    height: 65px;
-    font-size: 40px;
+    height: 50px;
+    font-size: 30px;
     font-weight: 600;
     color: #fff;
     text-align: left;

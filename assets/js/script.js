@@ -33,8 +33,8 @@ let numbersEl = document.querySelectorAll('.numbers'),
     // theme button
     themeBtn = document.querySelector('#theme-btn')
 
-    // body
-    bodyEl = document.body
+// body
+bodyEl = document.body
 
 
 
@@ -53,9 +53,9 @@ deleteLastBtn.addEventListener('click', deleteLastInputValue)
 equal.addEventListener('click', answerFunction)
 
 // theme btn
-themeBtn.addEventListener("click", () =>{
+themeBtn.addEventListener("click", () => {
     bodyEl.classList.toggle('light-theme')
-    if(bodyEl.classList.contains('light-theme')){
+    if (bodyEl.classList.contains('light-theme')) {
         themeBtn.children[0].classList.add('bxs-sun')
     } else {
         themeBtn.children[0].classList.remove('bxs-sun')
@@ -139,6 +139,11 @@ function answerFunction() {
     }
 }
 
+function toDegree() {
+    return
+    input.value * Math.PI / 180
+}
+
 // TITLE: math functions:
 // bad az click har dokme az function hay riazi, amaliat marbot be onha anjam mishe
 // va vared input value mishe
@@ -154,7 +159,7 @@ function mathFunctions() {
                 // Radian
             } else if (item.textContent == 'Rad') {
                 if (inputEL.value != '') {
-                    changeDisplay(inputEL.value * Math.PI / 180)
+                    changeDisplay(toDegree)
                 }
 
                 // Factorial
@@ -166,9 +171,27 @@ function mathFunctions() {
                 // Sin
             } else if (item.textContent == "Sin") {
                 if (inputEL.value != '') {
-                    changeDisplay(Math.sin(inputEL.value))
-
+                    changeDisplay(Math.sin(toDegree))
                 }
+
+                // Cos
+            } else if (item.textContent == "Cos") {
+                if (inputEL.value != '') {
+                    changeDisplay(Math.cos(toDegree))
+                }
+
+                // Tan
+            } else if (item.textContent == "Tan") {
+                if (inputEL.value != '') {
+                    changeDisplay(Math.tan(toDegree))
+                }
+
+                // Cot
+            } else if (item.textContent == "Cot") {
+                if (inputEL.value != '') {
+                    changeDisplay(1 / Math.tan(toDegree))
+                }
+
                 // Root
             } else if (item.textContent == "Root") {
                 if (inputEL.value != '') {

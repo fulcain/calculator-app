@@ -3,6 +3,8 @@
 
 <head>
 
+    <!-- boxi icons -->
+    <link rel="stylesheet" href="assets/boxicons/css/boxicons.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- css reset -->
@@ -16,13 +18,16 @@
 </head>
 
 <body>
-    
+
     <!-- container -->
     <div class="container">
-        
+
         <!-- left div -->
         <div id="left-div">
-            <h2>Calculator</h2>
+            <h2>
+                <div>Calculator</div>
+                <div id="theme-btn"><i class='bx bxs-moon'></i></div>
+            </h2>
             <div class="button-box">
 
                 <!-- right column -->
@@ -41,9 +46,9 @@
             <!-- Calculator -->
             <div id="calculator">
                 <div id="answer-page">
+
                     <!-- input -->
-                    <!-- <textarea id="answer-input" type="text" readonly> -->
-                        <textarea id="answer-input" readonly ></textarea>
+                    <textarea id="answer-input" readonly></textarea>
                 </div>
                 <div class="rows">
                     <span id="delete-all" class="buttons">AC</span>

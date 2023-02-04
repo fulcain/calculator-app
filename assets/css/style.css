@@ -4,7 +4,26 @@
 * {
     font-family: poppins;
 }
-
+:root{
+    --color-1:#818dff;
+    --color-2:#afb6f3;
+    --color-3:#0f1722;
+    --color-4: #161e29;
+    --color-5:#1d283a;
+    --color-6:#464545;
+}
+.light-theme{
+    --color-1:#1d283a;
+    --color-2:#161e29;
+    --color-3:#8297b4;
+    --color-4: #afb6f3;
+    --color-5:#99a3ff;
+    --color-6:#dddddd;
+}
+body{
+    background: var(--color-6);
+    transition: 1s all;
+}
 .container {
     width: 800px;
     margin: 0 auto;
@@ -14,10 +33,15 @@
     justify-content: center;
 }
 
+/* theme icon */
+#theme-btn i{
+    cursor: pointer;
+}
+
 /* all buttons */
 .buttons {
     cursor: pointer;
-    background-color: #161e29;
+    background-color: var(--color-4);
     margin-bottom: 10px;
     border-radius: 2px;
     display: flex;
@@ -32,18 +56,18 @@
 }
 
 .buttons:hover {
-    background-color: #818dff;
+    background-color: var(--color-1);
 }
 
 .buttons:active {
-    background-color: #afb6f3;
+    background-color: var(--color-2);
 }
 
 /* left div START*/
 
 #left-div {
     width: 240px;
-    background-color: #0f1722;
+    background-color: var(--color-3);
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -56,6 +80,9 @@
     font-size: 23px;
     font-weight: 400;
     margin: 40px auto;
+
+    display: flex;
+    gap: 10px;
 }
 
 .button-box {
@@ -67,7 +94,7 @@
 /* right div START */
 
 #right-div {
-    background-color: #1d283a;
+    background-color: var(--color-5);
     width: 560px;
     height: 600px;
     position: relative;
@@ -85,7 +112,7 @@
 #answer-page textarea {
     outline: none;
     border: none;
-    background-color: #1d283a;
+    background-color: var(--color-5);
     height: 65px;
     font-size: 40px;
     font-weight: 600;
@@ -103,7 +130,7 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: #0f1722;
+    background-color: var(--color-3);
 }
 
 ::-webkit-scrollbar-track {

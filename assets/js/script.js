@@ -140,8 +140,7 @@ function answerFunction() {
 }
 
 function toDegree() {
-    return
-    input.value * Math.PI / 180
+    return inputEL.value * Math.PI / 180
 }
 
 // TITLE: math functions:
@@ -159,7 +158,7 @@ function mathFunctions() {
                 // Radian
             } else if (item.textContent == 'Rad') {
                 if (inputEL.value != '') {
-                    changeDisplay(toDegree)
+                    changeDisplay(toDegree())
                 }
 
                 // Factorial
@@ -171,25 +170,25 @@ function mathFunctions() {
                 // Sin
             } else if (item.textContent == "Sin") {
                 if (inputEL.value != '') {
-                    changeDisplay(Math.sin(toDegree))
+                    changeDisplay(Math.sin(toDegree()))
                 }
 
                 // Cos
             } else if (item.textContent == "Cos") {
                 if (inputEL.value != '') {
-                    changeDisplay(Math.cos(toDegree))
+                    changeDisplay(Math.cos(toDegree()))
                 }
 
                 // Tan
             } else if (item.textContent == "Tan") {
                 if (inputEL.value != '') {
-                    changeDisplay(Math.tan(toDegree))
+                    changeDisplay(Math.tan(toDegree()))
                 }
 
                 // Cot
             } else if (item.textContent == "Cot") {
                 if (inputEL.value != '') {
-                    changeDisplay(1 / Math.tan(toDegree))
+                    changeDisplay(1 / Math.tan(toDegree()))
                 }
 
                 // Root

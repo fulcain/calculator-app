@@ -28,7 +28,13 @@ let numbersEl = document.querySelectorAll('.numbers'),
     dotBtn = document.querySelector('#dot'),
 
     //  number modifiers
-    numberModifiers = document.querySelectorAll('.number-modifiers')
+    numberModifiers = document.querySelectorAll('.number-modifiers'),
+
+    // theme button
+    themeBtn = document.querySelector('#theme-btn')
+
+    // body
+    bodyEl = document.body
 
 
 
@@ -46,6 +52,15 @@ deleteLastBtn.addEventListener('click', deleteLastInputValue)
 // equal ( = )
 equal.addEventListener('click', answerFunction)
 
+// theme btn
+themeBtn.addEventListener("click", () =>{
+    bodyEl.classList.toggle('light-theme')
+    if(bodyEl.classList.contains('light-theme')){
+        themeBtn.children[0].classList.add('bxs-sun')
+    } else {
+        themeBtn.children[0].classList.remove('bxs-sun')
+    }
+})
 
 // function ha
 

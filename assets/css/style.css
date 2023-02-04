@@ -43,7 +43,6 @@ body{
     cursor: pointer;
     background-color: var(--color-4);
     margin-bottom: 10px;
-    padding: 20px;
     border-radius: 2px;
     display: flex;
     align-items: center;

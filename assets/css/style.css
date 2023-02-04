@@ -4,26 +4,30 @@
 * {
     font-family: poppins;
 }
-:root{
-    --color-1:#818dff;
-    --color-2:#afb6f3;
-    --color-3:#0f1722;
+
+:root {
+    --color-1: #818dff;
+    --color-2: #afb6f3;
+    --color-3: #0f1722;
     --color-4: #161e29;
-    --color-5:#1d283a;
-    --color-6:#363636;
+    --color-5: #1d283a;
+    --color-6: #363636;
 }
-.light-theme{
-    --color-1:#afb6f3;
-    --color-2:#161e29;
-    --color-3:#8297b4;
+
+.light-theme {
+    --color-1: #afb6f3;
+    --color-2: #161e29;
+    --color-3: #8297b4;
     --color-4: #acacac;
-    --color-5:#99a3ff;
-    --color-6:#dddddd;
+    --color-5: #99a3ff;
+    --color-6: #dddddd;
 }
-body{
+
+body {
     background: var(--color-6);
     transition: 1s all;
 }
+
 .container {
     width: 800px;
     margin: 0 auto;
@@ -34,7 +38,7 @@ body{
 }
 
 /* theme icon */
-#theme-btn i{
+#theme-btn i {
     cursor: pointer;
 }
 
@@ -62,10 +66,15 @@ body{
 .buttons:active {
     background-color: var(--color-2);
 }
-.buttons>span{
+
+.log-span {
     font-size: 10px;
     padding-left: 1px;
     padding-top: 20px;
+}
+.buttons>span{
+    font-size: 10px;
+    padding-top: 25px;
 }
 
 /* left div START*/
@@ -97,6 +106,7 @@ body{
     display: flex;
     gap: 10px;
 }
+
 /* left div END*/
 
 /* right div START */
@@ -192,11 +202,13 @@ body{
         height: 34px;
         font-size: 20px;
     }
-    #left-div h2{
+
+    #left-div h2 {
         font-size: 15px;
     }
+
     #left-div,
-    #right-div{
+    #right-div {
         height: 450px;
     }
 }

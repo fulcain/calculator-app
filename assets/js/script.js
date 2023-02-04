@@ -18,9 +18,6 @@ let numbersEl = document.querySelectorAll('.numbers'),
     // equal
     equal = document.querySelector('.equal'),
 
-    // factorial
-    factorial = document.querySelector('.factorial'),
-
     // math functions
     mathFunctionsBtn = document.querySelectorAll('.math-functions'),
 
@@ -150,51 +147,62 @@ function mathFunctions() {
 
     mathFunctionsBtn.forEach(item => {
         item.addEventListener('click', () => {
-            // logarithm
-            if (item.textContent == "log") {
+            // logarithm 2
+            if (item.getAttribute('data') == "log2") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.log2(inputEL.value))
                 }
-                // Radian
-            } else if (item.textContent == 'Rad') {
+                //logarithm 10
+            } else if (item.getAttribute('data') == "log10") {
+                if (inputEL.value != '') {
+                    changeDisplay(Math.log10(inputEL.value))
+                }
+            }
+            // Radian
+            else if (item.textContent == 'rad') {
                 if (inputEL.value != '') {
                     changeDisplay(toDegree())
                 }
 
                 // Factorial
-            } else if (item.textContent == '!') {
+            } else if (item.textContent == 'x!') {
                 if (inputEL.value != '') {
                     changeDisplay(fact(inputEL.value))
                 }
 
                 // Sin
-            } else if (item.textContent == "Sin") {
+            } else if (item.textContent == "sin") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.sin(toDegree()))
                 }
 
                 // Cos
-            } else if (item.textContent == "Cos") {
+            } else if (item.textContent == "cos") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.cos(toDegree()))
                 }
 
                 // Tan
-            } else if (item.textContent == "Tan") {
+            } else if (item.textContent == "tan") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.tan(toDegree()))
                 }
 
                 // Cot
-            } else if (item.textContent == "Cot") {
+            } else if (item.textContent == "cot") {
                 if (inputEL.value != '') {
                     changeDisplay(1 / Math.tan(toDegree()))
                 }
 
-                // Root
-            } else if (item.textContent == "Root") {
+                // Root 2
+            } else if (item.getAttribute('data') == "root2") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.sqrt(inputEL.value))
+                }
+                // Root 3
+            } else if (item.getAttribute('data') == "root3") {
+                if (inputEL.value != '') {
+                    changeDisplay(Math.cbrt(inputEL.value))
                 }
             }
         })

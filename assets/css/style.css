@@ -62,6 +62,11 @@ body{
 .buttons:active {
     background-color: var(--color-2);
 }
+.buttons>span{
+    font-size: 10px;
+    padding-left: 1px;
+    padding-top: 20px;
+}
 
 /* left div START*/
 
@@ -90,7 +95,7 @@ body{
 
 #operators-box {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 /* left div END*/
 

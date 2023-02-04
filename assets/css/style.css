@@ -10,13 +10,13 @@
     --color-3:#0f1722;
     --color-4: #161e29;
     --color-5:#1d283a;
-    --color-6:#464545;
+    --color-6:#363636;
 }
 .light-theme{
-    --color-1:#1d283a;
+    --color-1:#afb6f3;
     --color-2:#161e29;
     --color-3:#8297b4;
-    --color-4: #afb6f3;
+    --color-4: #acacac;
     --color-5:#99a3ff;
     --color-6:#dddddd;
 }

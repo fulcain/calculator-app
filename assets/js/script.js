@@ -146,7 +146,7 @@ let answer = ''
 // TITLE: answer to the Eq ( = )
 // javab moadele ro to input neshon mide
 function answerFunction() {
-    if (inputEL.value === "") {
+    if (inputEL.value == "") {
         changeDisplay('')
     } else {
         answer = eval(inputEL.value)

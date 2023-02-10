@@ -3,6 +3,9 @@
 // numbers
 let numbersEl = document.querySelectorAll('.numbers'),
 
+    // all buttons
+    allButtons = document.querySelectorAll('.buttons'),
+
     // input
     inputEL = document.querySelector('#answer-input'),
 
@@ -41,6 +44,7 @@ let numbersEl = document.querySelectorAll('.numbers'),
 // delete all btn ( AC )
 deleteAllBtn.addEventListener("click", () => {
     changeDisplay('')
+
 })
 
 // delete last btn ( DEL )
@@ -100,11 +104,14 @@ function keyboardEvents() {
         // 0-9 only
         if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
             addToDisplay(e.key)
+            count = 0
         }
 
         // backspace    
         else if (e.key == 'Backspace') {
             deleteLastInputValue()
+        } else if(e.code == 'Enter'){
+            answerFunction()
         }
     })
 }

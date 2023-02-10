@@ -115,10 +115,10 @@ let count = 0
 function chooseOperator() {
     operatorBtn.forEach(item => {
         item.addEventListener("click", () => {
-            if (count < 1 && inputEL.value != '' && item.getAttribute('data') != '-') {
-                addToDisplay(item.getAttribute('data'))
+            if (count < 1 && inputEL.value != '' && item.getAttribute('data-value') != '-') {
+                addToDisplay(item.getAttribute('data-value'))
                 count++
-            } else if (count < 1 && item.getAttribute('data') == '-') {
+            } else if (count < 1 && item.getAttribute('data-value') == '-') {
                 addToDisplay(item.textContent)
                 count++
             }

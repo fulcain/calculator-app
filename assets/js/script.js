@@ -171,13 +171,13 @@ function mathFunctions() {
         item.addEventListener('click', () => {
 
             // logarithm 2
-            if (item.getAttribute('data') == "log2") {
+            if (item.getAttribute('data-value') == "log2") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.log2(inputEL.value))
                 }
 
                 //logarithm 10
-            } else if (item.getAttribute('data') == "log10") {
+            } else if (item.getAttribute('data-value') == "log10") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.log10(inputEL.value))
                 }
@@ -236,7 +236,7 @@ function mathFunctions() {
             }
 
             // Root 2
-            else if (item.getAttribute('data') == "root2") {
+            else if (item.getAttribute('data-value') == "root2") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.sqrt(inputEL.value))
                 }
@@ -244,7 +244,7 @@ function mathFunctions() {
             }
 
             // Root 3
-            else if (item.getAttribute('data') == "root3") {
+            else if (item.getAttribute('data-value') == "root3") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.cbrt(inputEL.value))
                 }

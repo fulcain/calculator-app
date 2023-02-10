@@ -1,6 +1,6 @@
-// Variable ha                
+// Variables                
 
-// addad ha
+// numbers
 let numbersEl = document.querySelectorAll('.numbers'),
 
     // input
@@ -36,7 +36,7 @@ let numbersEl = document.querySelectorAll('.numbers'),
 
 
 
-// event ha
+// events
 
 // delete all btn ( AC )
 deleteAllBtn.addEventListener("click", () => {
@@ -59,11 +59,11 @@ themeBtn.addEventListener("click", () => {
     }
 })
 
-// function ha
+// functions
 
-// TITLE: entekhab adad
-// adad mored nazaro entekhab mikone va ba function addToDisplay on ro be input ezafe mikone
-// agar meqdar count 0 nabod on ro sefr mikone
+// TITLE: choose Number
+// chooses the the clicked number and displays it on inputEL.value wit addToDisplay function
+// if count is not 0, it sets it to 0
 function chooseNumber() {
     numbersEl.forEach(item => {
         item.addEventListener("click", () => {
@@ -90,6 +90,8 @@ function chooseNumber() {
 
 
 // TITLE: keyboard events
+// you can get number 0 - 9 keyboard
+// by pressing backspace you can delete one by on
 function keyboardEvents() {
 
     // keyboard event
@@ -107,9 +109,9 @@ function keyboardEvents() {
     })
 }
 let count = 0
-// TITLE: entekhab operator
-// ba click operator ha meqdareshon ro ba estefade az function addToDisplay namayesh mide
-// be meqdar operator yek done ezafe mishe ke bishtar az 1 bar estefade nashan
+// TITLE: choose operator
+// clicking on operators will display that operator data with addToDisplay function
+// adds 1 to count so the condition is not correct and the operator would print only one time
 function chooseOperator() {
     operatorBtn.forEach(item => {
         item.addEventListener("click", () => {
@@ -125,26 +127,27 @@ function chooseOperator() {
 }
 
 // TITLE: addToDisplay Function
-// har dokme ke click beshe , meqdaresh vared input mishe + harchi ke az qabl bode
+// adds the argument to inputEL.value + any thing that was already in the input
 function addToDisplay(button) {
     inputEL.value += button
 }
 
 // TITLE: changeDisplay
-// meqdar display = argument qarare migire
+// adds the argument to inputEL.value 
 function changeDisplay(name) {
     inputEL.value = name
 }
 
 
 // TITLE: delete last input text ( DEL )
-// akharin addad ya alamat ke to input hast ro pak mikone
+// deletes the last string that is in the input
 function deleteLastInputValue() {
     changeDisplay(inputEL.value.slice(0, -1))
 }
+
 let answer = ''
-// TITLE: answer to the Eq ( = )
-// javab moadele ro to input neshon mide
+// TITLE: calculate what is in the string
+// shows the answer in input after calculating it with eval() method
 function answerFunction() {
     if (inputEL.value == "") {
         changeDisplay('')
@@ -154,71 +157,94 @@ function answerFunction() {
     }
 }
 
+// TITLE: changes the entered value to Degree
 function toDegree() {
     return inputEL.value * Math.PI / 180
 }
 
-// TITLE: math functions:
-// bad az click har dokme az function hay riazi, amaliat marbot be onha anjam mishe
-// va vared input value mishe
+// TITLE: math functions
+// after clicking each function the number in input will go into the built-in function of JavaScript 
+// and will be displayed in the input
 function mathFunctions() {
 
     mathFunctionsBtn.forEach(item => {
         item.addEventListener('click', () => {
+
             // logarithm 2
             if (item.getAttribute('data') == "log2") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.log2(inputEL.value))
                 }
+
                 //logarithm 10
             } else if (item.getAttribute('data') == "log10") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.log10(inputEL.value))
                 }
             }
+
             // Radian
             else if (item.textContent == 'rad') {
                 if (inputEL.value != '') {
                     changeDisplay(toDegree())
                 }
+            }
 
-                // Factorial
-            } else if (item.textContent == 'x!') {
+            // Factorial
+            else if (item.textContent == 'x!') {
                 if (inputEL.value != '') {
                     changeDisplay(fact(inputEL.value))
                 }
 
-                // Sin
-            } else if (item.textContent == "sin") {
+
+            }
+
+            // Sin
+            else if (item.textContent == "sin") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.sin(toDegree()))
                 }
 
-                // Cos
-            } else if (item.textContent == "cos") {
+
+            }
+
+            // Cos
+            else if (item.textContent == "cos") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.cos(toDegree()))
                 }
 
-                // Tan
-            } else if (item.textContent == "tan") {
+
+            }
+
+            // Tan
+            else if (item.textContent == "tan") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.tan(toDegree()))
                 }
 
-                // Cot
-            } else if (item.textContent == "cot") {
+
+            }
+
+            // Cot
+            else if (item.textContent == "cot") {
                 if (inputEL.value != '') {
                     changeDisplay(1 / Math.tan(toDegree()))
                 }
 
-                // Root 2
-            } else if (item.getAttribute('data') == "root2") {
+
+            }
+
+            // Root 2
+            else if (item.getAttribute('data') == "root2") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.sqrt(inputEL.value))
                 }
-                // Root 3
-            } else if (item.getAttribute('data') == "root3") {
+
+            }
+
+            // Root 3
+            else if (item.getAttribute('data') == "root3") {
                 if (inputEL.value != '') {
                     changeDisplay(Math.cbrt(inputEL.value))
                 }
@@ -229,9 +255,10 @@ function mathFunctions() {
 }
 
 // TITLE: factorial ( ! )
-// factorial addad ha ro hesab mikone
+// gets the number in input and multiply it by one number lesser than that number 
+// this function goes until the number is 0 or 1
 function fact(e) {
-    if (e == 0) {
+    if (e == 0 || e == 1) {
         return 1
     } else {
         return e * fact(e - 1)

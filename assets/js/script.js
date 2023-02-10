@@ -1,4 +1,4 @@
-// Variable ha
+// Variable ha                
 
 // addad ha
 let numbersEl = document.querySelectorAll('.numbers'),
@@ -28,10 +28,10 @@ let numbersEl = document.querySelectorAll('.numbers'),
     numberModifiers = document.querySelectorAll('.number-modifiers'),
 
     // theme button
-    themeBtn = document.querySelector('#theme-btn')
+    themeBtn = document.querySelector('#theme-btn'),
 
-// body
-bodyEl = document.body
+    // body
+    bodyEl = document.body
 
 
 
@@ -88,6 +88,24 @@ function chooseNumber() {
 
 }
 
+
+// TITLE: keyboard events
+function keyboardEvents() {
+
+    // keyboard event
+    window.addEventListener('keydown', (e) => {
+
+        // 0-9 only
+        if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+            addToDisplay(e.key)
+        }
+
+        // backspace    
+        else if (e.key == 'Backspace') {
+            deleteLastInputValue()
+        }
+    })
+}
 let count = 0
 // TITLE: entekhab operator
 // ba click operator ha meqdareshon ro ba estefade az function addToDisplay namayesh mide
@@ -226,4 +244,5 @@ document.addEventListener('DOMContentLoaded', () => {
     chooseNumber()
     chooseOperator()
     mathFunctions()
+    keyboardEvents()
 })

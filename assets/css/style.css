@@ -12,15 +12,17 @@
     --color-4: #161e29;
     --color-5: #1d283a;
     --color-6: #363636;
+    --color-7:#fdfdfd;
 }
 
 .light-theme {
     --color-1: #afb6f3;
     --color-2: #161e29;
     --color-3: #8297b4;
-    --color-4: #acacac;
-    --color-5: #99a3ff;
+    --color-4: #e4e4e4;
+    --color-5: #6b71ac;
     --color-6: #dddddd;
+    --color-7:#6e6e6e;
 }
 
 body {
@@ -55,7 +57,7 @@ body {
     height: 60px;
     font-size: 18px;
     transition: all 0.2s;
-    /* user cant select the text */
+    color: var(--color-7);
     user-select: none;
 }
 

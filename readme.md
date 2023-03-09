@@ -7,7 +7,7 @@
 
 # Installation
 
-- if you can't use fulcain.github.io/calculator-app
+- if you can't use [calculator-app github page](https://fulcain.github.io/calculator-app)
 - click on code and download zip
 - open the index.html file
 - book mark it for a quick access
